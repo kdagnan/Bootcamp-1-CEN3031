@@ -8,6 +8,19 @@ var listingData, server;
 
 var requestHandler = function(request, response) {
   var parsedUrl = url.parse(request.url);
+  if(parsedUrl.path == "/favicon.ico"){
+
+  }
+  else if(parsedUrl.path == "/listings"){
+    response.writeHead(200, {"Content-Type": "application/json"});
+    response.end(JSON.stringify(listingData));
+    //response.end();
+  }else{
+    response.statusCode = 404;
+    response.write("Bad gateway error");
+    response.end();
+  }
+
 
   /*
     Your request handler should send listingData in the JSON format as a response if a GET request 
@@ -27,6 +40,8 @@ var requestHandler = function(request, response) {
 };
 
 fs.readFile('listings.json', 'utf8', function(err, data) {
+  if(err) throw err;
+  listingData = JSON.parse(data);
   /*
     This callback function should save the data in the listingData variable, 
     then start the server. 
@@ -43,7 +58,10 @@ fs.readFile('listings.json', 'utf8', function(err, data) {
    //Save the sate in the listingData variable already defined
   
 
-  //Creates the server
+    server = http.createServer(requestHandler);
+    server.listen(port, function() {
+      console.log("Server listenting on: http://localhost:" + port);
+    });
   
   //Start the server
 
