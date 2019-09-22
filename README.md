@@ -1,4 +1,17 @@
-# Introduction to HTTP and Asynchronous Programming using Node.js
+# About Bootcamp #1 - Software Engineering
+
+
+This assignment is a very basic application of Node.js to run a backend server capable of processing requests. Bootcamps 2-4 build on this assignment.
+
+
+
+
+
+
+#  ------ ORIGINAL ASSIGNMENT DETAILS BELOW ------
+
+
+## Introduction to HTTP and Asynchronous Programming using Node.js
 In this assignment we will start to build our UF Directory application. We will use [Node.js](https://en.wikipedia.org/wiki/Node.js) and some of its built in modules to implement a server that provides directory data to clients. 
 ### What is HTTP? (Make sure to read [this](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177))
 HTTP (Hypertext Transfer Protocol) is a **stateless** protocol that allows computers to communicate with each other. We use HTTP to allow our client application (the one users see) to communicate with a server that stores and manipulates data relevant to the user.
